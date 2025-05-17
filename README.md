@@ -1,6 +1,6 @@
 # AC-FinalProject
 
-# SecureCrypt: A Cryptographic Web Application
+# 🔐SecureCrypt: A Cryptographic Web Application
 
 **Course Name:** CSAC 329 – Applied Cryptography  
 **Date:** May 2025  
@@ -16,7 +16,7 @@
 
 ---
 
-## 🔐 Introduction
+## 📖 Introduction
 
 **SecureCrypt** is a web-based cryptographic application built using Flask that allows users to securely encrypt, decrypt, and hash messages and files using various cryptographic algorithms. The application provides an intuitive UI for selecting and interacting with multiple symmetric, asymmetric, and hashing techniques. Cryptography is vital in protecting data confidentiality, integrity, and authenticity. In a digital age of increasing cyber threats, understanding and implementing cryptographic principles is fundamental to secure software systems.
 
