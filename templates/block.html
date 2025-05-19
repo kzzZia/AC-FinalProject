@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Block Cipher (XOR with Padding)</h2>
+
+<button onclick="toggleInfo()">❓ Learn About Block Cipher</button>
+<div id="info" style="display:none; background:#33334d; padding:15px; border-radius:8px;">
+  <p><strong>Type:</strong> Symmetric Block Cipher (XOR-based)</p>
+  <p><strong>History:</strong> Block ciphers are a foundational type of symmetric encryption. This version uses XOR in 8-byte blocks for demonstration.</p>
+  <p><strong>How it works:</strong> Text is padded into 8-byte blocks, each of which is XORed with an 8-character key. Decryption reverses the process using the same key.</p>
+  <p><strong>Use Cases:</strong> Educational purposes, concept building for AES/DES, block-based encryption examples.</p>
+</div>
+
+<script>
+function toggleInfo() {
+    const info = document.getElementById("info");
+    info.style.display = info.style.display === "none" ? "block" : "none";
+}
+</script>
+
+<form method="POST" enctype="multipart/form-data">
+    <label>Enter Text:</label><br>
+    <textarea name="text" rows="4" cols="60" placeholder="Or upload a file below..."></textarea><br>
+
+    <label>Upload File (optional):</label><br>
+    <input type="file" name="file"><br><br>
+
+    <label>Key (must be 8 characters):</label><br>
+    <input type="text" name="key" required><br><br>
+
+    <button type="submit" name="action" value="encrypt">Encrypt</button>
+    <button type="submit" name="action" value="decrypt">Decrypt</button>
+</form>
+
+{% if result %}
+    <h3>Result:</h3>
+    <textarea readonly rows="5" cols="60">{{ result }}</textarea>
+{% endif %}
+{% endblock %}

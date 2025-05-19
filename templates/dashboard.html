@@ -1,0 +1,21 @@
+{% extends "layout_dashboard.html" %}
+{% block content %}
+<div class="content dashboard-container">
+  <h1 style="text-align: center; margin-top: 50px;">Welcome to SecureCrypt!</h1>
+
+  <p style="text-align: center; margin-bottom: 40px; color: #00cccc; font-size: 1.1rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+    A web-based cryptographic application built using Flask that allows users to securely encrypt, decrypt, and hash messages and files using various cryptographic algorithms.
+  </p>
+  
+  <div class="tools-center">
+      <div class="tools-vertical">
+          <a href="/xor" class="tool">🔑 XOR Cipher</a>
+          <a href="/caesar" class="tool">🔑 Caesar Cipher</a>
+          <a href="/diffie" class="tool">🔑 Diffie-Hellman</a>
+          <a href="/rsa" class="tool">🔑 RSA Cipher</a>
+          <a href="/block" class="tool">🔑 Block Cipher</a>
+          <a href="/hash" class="tool">🔐 Hashing Algorithms</a>
+      </div>
+  </div>
+</div>
+{% endblock %}

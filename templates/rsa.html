@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>RSA Encryption Demo</h2>
+
+<button onclick="toggleInfo()" style="margin-bottom: 10px;">❓ Learn About RSA</button>
+<div id="info" style="display:none; background:#33334d; padding:15px; border-radius:8px; margin-bottom: 20px;">
+  <p><strong>Type:</strong> Asymmetric Public-Key Encryption</p>
+  <p><strong>How it works:</strong> RSA uses two keys (public and private) and mathematical properties of large prime numbers and modular exponentiation. 
+     The public key encrypts data, and the private key decrypts it.</p>
+  <p><strong>Use Cases:</strong> Secure message transmission, digital signatures, SSL/TLS, secure email, and VPNs.</p>
+  <p><strong>Example:</strong> This form generates random primes and keys, then encrypts and decrypts the input message.</p>
+</div>
+
+<form method="POST">
+    <label>Enter a message to encrypt:</label><br>
+    <input name="message" placeholder="Enter plaintext" required style="width: 400px;"><br><br>
+    <button type="submit">Encrypt</button>
+</form>
+
+{% if public %}
+    <h4>Public Key (e, n):</h4>
+    <p>{{ public }}</p>
+
+    <h4>Private Key (d, n):</h4>
+    <p>{{ private }}</p>
+
+    <h4>Encrypted Cipher (numeric):</h4>
+    <p>{{ cipher }}</p>
+
+    <h4>Decrypted Text:</h4>
+    <p>{{ plain }}</p>
+
+    <h4>Character Transformation Table:</h4>
+    <table border="1" cellpadding="6" style="border-collapse: collapse; background-color: #2d2d40; color: white;">
+        <tr>
+            <th>#</th>
+            <th>Character</th>
+            <th>ord(char)</th>
+            <th>Encrypted</th>
+            <th>Decrypted</th>
+        </tr>
+        {% for row in table %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ row.char }}</td>
+            <td>{{ row.ord }}</td>
+            <td>{{ row.cipher }}</td>
+            <td>{{ row.decrypted }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
+<script>
+function toggleInfo() {
+    const info = document.getElementById("info");
+    info.style.display = info.style.display === "none" ? "block" : "none";
+}
+</script>
+{% endblock %}
+
+<button onclick="toggleInfo()" style="margin-bottom: 10px;">❓ Learn About RSA</button>
+<div id="info" style="display:none; background:#33334d; padding:15px; border-radius:8px; margin-bottom: 20px;">
+  <p><strong>Type:</strong> Asymmetric Public-Key Encryption</p>
+  <p><strong>How it works:</strong> RSA uses two keys (public and private) and mathematical properties of large prime numbers and modular exponentiation. 
+     The public key encrypts data, and the private key decrypts it.</p>
+  <p><strong>Use Cases:</strong> Secure message transmission, digital signatures, SSL/TLS, secure email, and VPNs.</p>
+</div>
+

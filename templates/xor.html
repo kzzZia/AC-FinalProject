@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>XOR Cipher</h2>
+
+<button onclick="toggleInfo()" style="margin-bottom: 10px;">❓ Learn About XOR Cipher</button>
+<div id="info" style="display:none; background:#33334d; padding:15px; border-radius:8px; margin-bottom: 20px;">
+  <p><strong>Type:</strong> Symmetric Stream Cipher</p>
+  <p><strong>History:</strong> One of the simplest symmetric encryption techniques. It uses the XOR (exclusive OR) logic gate.</p>
+  <p><strong>How it works:</strong> Each character of the plaintext is XORed with a corresponding character of a repeating key.</p>
+  <p><strong>Use cases:</strong> Basic encryption, obfuscation, learning tool for binary operations.</p>
+</div>
+
+<form method="POST" enctype="multipart/form-data">
+    <label>Enter Text:</label><br>
+    <textarea name="text" rows="4" cols="60" placeholder="Or upload a file below..."></textarea><br>
+
+    <label>Upload File (optional):</label><br>
+    <input type="file" name="file"><br><br>
+
+    <label>Enter Key:</label><br>
+    <input type="text" name="key" required><br><br>
+
+    <button type="submit">Encrypt / Decrypt</button>
+</form>
+
+{% if result %}
+    <h3>Result:</h3>
+    <textarea readonly rows="3" cols="60">{{ result }}</textarea>
+
+    <h4>Bitwise XOR Breakdown:</h4>
+    <table border="1" cellpadding="6" style="border-collapse: collapse; background-color: #2d2d40; color: white;">
+        <tr>
+            <th>#</th>
+            <th>Plaintext Char</th>
+            <th>Plaintext Bin</th>
+            <th>Key Char</th>
+            <th>Key Bin</th>
+            <th>XOR Result Bin</th>
+            <th>XOR Char</th>
+        </tr>
+        {% for row in log %}
+        <tr>
+            <td>{{ row.index }}</td>
+            <td>{{ row.p_char }}</td>
+            <td>{{ row.p_bin }}</td>
+            <td>{{ row.k_char }}</td>
+            <td>{{ row.k_bin }}</td>
+            <td>{{ row.xor_bin }}</td>
+            <td>{{ row.xor_char }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
+<script>
+function toggleInfo() {
+    const info = document.getElementById("info");
+    info.style.display = info.style.display === "none" ? "block" : "none";
+}
+</script>
+{% endblock %}

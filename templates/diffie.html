@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Diffie-Hellman Key Exchange</h2>
+
+<button onclick="toggleInfo()" style="margin-bottom: 10px;">❓ Learn About Diffie-Hellman</button>
+<div id="info" style="display:none; background:#33334d; padding:15px; border-radius:8px; margin-bottom: 20px;">
+  <p><strong>Type:</strong> Asymmetric Key Exchange Protocol</p>
+  <p><strong>How it works:</strong> Both parties agree on a large prime number <code>p</code> and base <code>g</code>. They privately choose secret numbers and compute public values which are exchanged. Each party uses the other’s public value to compute the shared key using modular exponentiation.</p>
+  <p><strong>Use Cases:</strong> Secure key exchange in SSL/TLS, VPNs, and encrypted messaging apps.</p>
+</div>
+
+<form method="POST">
+    <label>Prime Number (p):</label><br>
+    <input type="number" name="p" placeholder="e.g., 23" required><br><br>
+
+    <label>Base Generator (g):</label><br>
+    <input type="number" name="g" placeholder="e.g., 5" required><br><br>
+
+    <label>Private Key 1:</label><br>
+    <input type="number" name="a" placeholder="e.g., 6" required><br><br>
+
+    <label>Private Key 2:</label><br>
+    <input type="number" name="b" placeholder="e.g., 15" required><br><br>
+
+    <button type="submit">Generate Shared Keys</button>
+</form>
+
+{% if p %}
+    <h4>Results:</h4>
+    <p><strong>Public Key 1:</strong> {{ A }}</p>
+    <p><strong>Public Key 2:</strong> {{ B }}</p>
+    <p><strong>Computed Shared Key 1:</strong> {{ secret_A }}</p>
+    <p><strong>Computed Shared Key 2:</strong> {{ secret_B }}</p>
+
+    {% if secret_A == secret_B %}
+        <p style="color: limegreen;"><strong>✓ Shared keys match!</strong></p>
+    {% else %}
+        <p style="color: red;"><strong>✗ Shared keys do not match!</strong></p>
+    {% endif %}
+{% endif %}
+
+{% if error %}
+    <p style="color: red;"><strong>{{ error }}</strong></p>
+{% endif %}
+
+<script>
+function toggleInfo() {
+    const info = document.getElementById("info");
+    info.style.display = info.style.display === "none" ? "block" : "none";
+}
+</script>
+{% endblock %}
+
+
+
+

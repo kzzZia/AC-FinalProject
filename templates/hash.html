@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Hashing Algorithms</h2>
+
+<button onclick="toggleInfo()" style="margin-bottom: 10px;">❓ Learn About Hashing</button>
+<div id="info" style="display:none; background:#33334d; padding:15px; border-radius:8px; margin-bottom: 20px;">
+  <p><strong>Type:</strong> One-way Cryptographic Function</p>
+  <p><strong>Purpose:</strong> Hash functions convert input data into a fixed-size string of characters (digest) that uniquely represents the input.</p>
+  <p><strong>Common Hashes:</strong> SHA-256 (strong), MD5 (fast but insecure), SHA-1 (deprecated), BLAKE2 (modern and fast).</p>
+  <p><strong>Use Cases:</strong> Password storage, data integrity, checksums, digital signatures, blockchain.</p>
+</div>
+
+<form method="POST" enctype="multipart/form-data">
+    <label>Enter Text to Hash:</label><br>
+    <textarea name="text" rows="4" cols="60" placeholder="Or upload a file below..."></textarea><br>
+
+    <label>Upload File (optional):</label><br>
+    <input type="file" name="file"><br><br>
+
+    <label>Select Hash Algorithm:</label><br>
+    <select name="algorithm">
+        <option value="SHA256">SHA256</option>
+        <option value="SHA1">SHA1</option>
+        <option value="MD5">MD5</option>
+        <option value="BLAKE2">BLAKE2</option>
+    </select><br><br>
+
+    <button type="submit">Generate Hash</button>
+</form>
+
+{% if result %}
+    <h3>Result:</h3>
+    <textarea readonly rows="5" cols="60">{{ result }}</textarea>
+{% endif %}
+
+<script>
+function toggleInfo() {
+    const info = document.getElementById("info");
+    info.style.display = info.style.display === "none" ? "block" : "none";
+}
+</script>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Caesar Cipher</h2>
+
+<button onclick="toggleInfo()">❓ Learn About Caesar Cipher</button>
+<div id="info" style="display:none; background:#33334d; padding:15px; border-radius:8px;">
+  <p><strong>Type:</strong> Symmetric Substitution Cipher</p>
+  <p><strong>History:</strong> Named after Julius Caesar, who used this technique to protect Roman military communications.</p>
+  <p><strong>How it works:</strong> Each character is shifted by a fixed number of positions (modulo the ASCII range). Supports custom shift patterns for more complexity.</p>
+  <p><strong>Use Cases:</strong> Teaching basic encryption concepts, simple message encoding, historical cryptography studies.</p>
+</div>
+
+<script>
+function toggleInfo() {
+    const info = document.getElementById("info");
+    info.style.display = info.style.display === "none" ? "block" : "none";
+}
+</script>
+
+<form method="POST">
+    <label>Text:</label><br>
+    <input name="text" placeholder="Enter text" required><br><br>
+    <label>Shift Keys (space-separated integers):</label><br>
+    <input name="shifts" placeholder="e.g., 1 2 3" required><br><br>
+    <button type="submit" name="action" value="encrypt">Encrypt</button>
+    <button type="submit" name="action" value="decrypt">Decrypt</button>
+</form>
+
+{% if result %}
+    <h3>Result:</h3>
+    <textarea readonly rows="5" cols="60">{{ result }}</textarea>
+{% endif %}
+{% endblock %}

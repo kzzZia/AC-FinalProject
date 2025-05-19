@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Applied Cryptography</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>SecureCrypt</h2>
+            <ul>
+                <li><a href="/dashboard">🏠 Dashboard</a></li>
+                <li><a href="/xor">🔒 XOR Cipher</a></li>
+                <li><a href="/caesar">🔒 Caesar Cipher</a></li>
+                <li><a href="/diffie">🔒 Diffie Hellman</a></li>
+                <li><a href="/rsa">🔒 RSA Basic</a></li>
+                <li><a href="/block">🔒 Block Cipher-XOR</a></li>
+                <li><a href="/hash">🔐 Hashing Algorithms</a></li>
+                
+            </ul>
+        </div>
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Applied Cryptography Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #0d0d1a; color: white; font-family: 'Fira Code', monospace;">
+
+<div class="dashboard-wrapper">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

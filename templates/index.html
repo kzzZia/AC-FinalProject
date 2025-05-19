@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SecureCrypt</title>
+</head>
+<body>
+    <h2>Cryptographic Web Application</h2>
+
+    <form method="POST">
+        <label for="input_text">Enter Text:</label><br>
+        <textarea name="input_text" rows="4" cols="50" placeholder="Enter text to encrypt, decrypt, or hash..." required></textarea><br><br>
+
+        <label for="algo_type">Algorithm Type:</label>
+        <select name="algo_type" required>
+            <option value="symmetric">Symmetric</option>
+            <option value="asymmetric">Asymmetric</option>
+            <option value="hash">Hash</option>
+        </select>
+
+        <label for="algorithm">Algorithm:</label>
+        <select name="algorithm" required>
+            <!-- Symmetric Options -->
+            <option value="AES">AES</option>
+            <option value="DES">DES</option>
+            <option value="Fernet">Fernet</option>
+
+            <!-- Asymmetric Options -->
+            <option value="RSA">RSA</option>
+            <option value="ECC">ECC</option>
+
+            <!-- Hash Options -->
+            <option value="SHA256">SHA256</option>
+            <option value="SHA1">SHA1</option>
+            <option value="MD5">MD5</option>
+            <option value="BLAKE2">BLAKE2</option>
+        </select><br><br>
+
+        <input type="submit" name="action" value="Encrypt">
+        <input type="submit" name="action" value="Decrypt">
+    </form>
+
+    {% if result %}
+        <h3>Result:</h3>
+        <textarea rows="6" cols="80" readonly>{{ result }}</textarea>
+    {% endif %}
+</body>
+</html>
