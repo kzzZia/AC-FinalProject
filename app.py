@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 from algorithms import xor_cipher, caesar_cipher, rsa_basic, block_cipher, diffie_hellman, hashing
+from utils.file_utils import save_uploaded_file
+import os
 
 app = Flask(__name__)
 
@@ -13,9 +15,18 @@ def xor():
     result = ''
     log = []
     if request.method == 'POST':
-        text = request.form['text']
         key = request.form['key']
-        result, log = xor_cipher.xor_cipher(text, key)
+        text = request.form.get('text')
+        uploaded_file = request.files.get('file')
+
+        if uploaded_file and uploaded_file.filename:
+            path = save_uploaded_file(uploaded_file)
+            with open(path, 'r', encoding='utf-8', errors='ignore') as f:
+                text = f.read()
+
+        if text:
+            result, log = xor_cipher.xor_cipher(text, key)
+
     return render_template('xor.html', result=result, log=log)
 
 @app.route('/caesar', methods=['GET', 'POST'])
@@ -33,10 +44,19 @@ def caesar():
 def block():
     result = ''
     if request.method == 'POST':
-        text = request.form['text']
         key = request.form['key']
         action = request.form['action']
-        result = block_cipher.encrypt_decrypt(text, key, action)
+        text = request.form.get('text')
+        uploaded_file = request.files.get('file')
+
+        if uploaded_file and uploaded_file.filename:
+            path = save_uploaded_file(uploaded_file)
+            with open(path, 'r', encoding='utf-8', errors='ignore') as f:
+                text = f.read()
+
+        if text:
+            result = block_cipher.encrypt_decrypt(text, key, action)
+
     return render_template('block.html', result=result)
 
 @app.route('/rsa', methods=['GET', 'POST'])
@@ -64,8 +84,6 @@ def rsa():
     return render_template('rsa.html', public=public, private=private,
                            message=message, cipher=cipher, plain=plain, table=table)
 
-
-
 @app.route('/diffie', methods=['GET', 'POST'])
 def diffie():
     if request.method == 'POST':
@@ -91,9 +109,16 @@ def diffie():
 def hash_view():
     result = ''
     if request.method == 'POST':
-        text = request.form['text']
         algo = request.form['algorithm']
-        result = hashing.hash_text(text, algo)
+        text = request.form.get('text')
+        uploaded_file = request.files.get('file')
+
+        if uploaded_file and uploaded_file.filename:
+            path = save_uploaded_file(uploaded_file)
+            result = hashing.hash_file(path, algo)
+        else:
+            result = hashing.hash_text(text, algo)
+
     return render_template('hash.html', result=result)
 
 if __name__ == '__main__':
