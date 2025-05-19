@@ -61,7 +61,11 @@ def block():
 
 @app.route('/rsa', methods=['GET', 'POST'])
 def rsa():
-    public = private = message = cipher = plain = table = ''
+    public = private = ''
+    message = ''
+    cipher = []
+    plain = ''
+    table = []
     if request.method == 'POST':
         message = request.form['message']
         p = rsa_basic.generate_prime_number()
