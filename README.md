@@ -43,4 +43,10 @@
 --- 
 
 ## 📸 Sample Runs / Outputs
+Dashboard
+![image](https://github.com/user-attachments/assets/d487d1fd-a7f7-4265-90ac-45433204c430)
+Layout Dashboard
+![image](https://github.com/user-attachments/assets/876095eb-df41-4121-81cf-b71a84276e1e)
+
+
 
