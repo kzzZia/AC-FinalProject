@@ -29,3 +29,18 @@
 3. Provide educational context and documentation about each cryptographic technique to enhance learning and usability.
 
 ---
+
+## 💡 Discussions
+
+---
+
+### ⚙️ Application Architecture and UI Choice
+
+---
+
+### 🔐 Implemented Cryptographic Algorithms
+
+--- 
+
+## 📸 Sample Runs / Outputs
+
