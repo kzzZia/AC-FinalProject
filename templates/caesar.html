@@ -45,14 +45,15 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-<form method="POST" id="caesar-form">
-        <label>Text:</label><br>
-        <input name="text" placeholder="Enter text" required><br><br>
-        <label>Shift Keys (space-separated integers):</label><br>
-        <input name="shifts" id="shifts" placeholder="e.g., 1 2 3" required><br>
-        <div id="shift-error" style="color:red; margin-bottom:10px;"></div>
-        <button type="submit" name="action" value="encrypt">Encrypt</button>
-        <button type="submit" name="action" value="decrypt">Decrypt</button>
+<form method="POST">
+    <label>Enter Text:</label><br>
+    <textarea name="text" rows="4" cols="60">{{ request.form.text or '' }}</textarea><br>
+
+    <label>Shift Keys (space-separated):</label><br>
+    <input type="text" name="shifts" value="{{ request.form.shifts or '' }}" required><br><br>
+
+    <button type="submit" name="action" value="encrypt">Encrypt</button>
+    <button type="submit" name="action" value="decrypt">Decrypt</button>
 </form>
 
 {% if result %}
