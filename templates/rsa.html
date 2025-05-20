@@ -12,9 +12,10 @@
 </div>
 
 <form method="POST">
-        <label>Enter a message to encrypt:</label><br>
-        <input name="message" placeholder="Enter plaintext" required style="width: 400px;"><br><br>
-        <button type="submit" name="action" value="encrypt">Encrypt</button>
+    <label>Enter a message to encrypt:</label><br>
+    <input name="message" placeholder="Enter plaintext" style="width: 400px;" value="{{ request.form.message or '' }}" required><br><br>
+
+    <button type="submit">Encrypt</button>
 </form>
 
 {% if public %}
