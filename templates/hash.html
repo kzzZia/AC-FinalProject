@@ -12,21 +12,22 @@
 
 <form method="POST" enctype="multipart/form-data">
     <label>Enter Text to Hash:</label><br>
-    <textarea name="text" rows="4" cols="60" placeholder="Or upload a file below..."></textarea><br>
+    <textarea name="text" rows="4" cols="60" placeholder="Or upload a file...">{{ request.form.text or '' }}</textarea><br>
 
     <label>Upload File (optional):</label><br>
     <input type="file" name="file"><br><br>
 
     <label>Select Hash Algorithm:</label><br>
     <select name="algorithm">
-        <option value="SHA256">SHA256</option>
-        <option value="SHA1">SHA1</option>
-        <option value="MD5">MD5</option>
-        <option value="BLAKE2">BLAKE2</option>
+        <option value="SHA256" {% if request.form.algorithm == 'SHA256' %}selected{% endif %}>SHA256</option>
+        <option value="SHA1" {% if request.form.algorithm == 'SHA1' %}selected{% endif %}>SHA1</option>
+        <option value="MD5" {% if request.form.algorithm == 'MD5' %}selected{% endif %}>MD5</option>
+        <option value="BLAKE2" {% if request.form.algorithm == 'BLAKE2' %}selected{% endif %}>BLAKE2</option>
     </select><br><br>
 
     <button type="submit">Generate Hash</button>
 </form>
+
 
 {% if result %}
     <h3>Result:</h3>
