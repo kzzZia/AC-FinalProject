@@ -19,13 +19,13 @@ function toggleInfo() {
 
 <form method="POST" enctype="multipart/form-data">
     <label>Enter Text:</label><br>
-    <textarea name="text" rows="4" cols="60">{{ request.form.text or '' }}</textarea><br>
+    <textarea name="text" rows="4" placeholder="Enter text" cols="60">{{ request.form.text or '' }}</textarea><br>
 
     <label>Upload File (optional):</label><br>
     <input type="file" name="file"><br><br>
 
     <label>Key (must be 8 characters):</label><br>
-    <input type="text" name="key" value="{{ request.form.key or '' }}" required><br><br>
+    <input type="text" name="key" placeholder="Enter key" value="{{ request.form.key or '' }}" required><br><br>
 
     <button type="submit" name="action" value="encrypt">Encrypt</button>
     <button type="submit" name="action" value="decrypt">Decrypt</button>
