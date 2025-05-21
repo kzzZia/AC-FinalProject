@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+tw{% extends "layout.html" %}
 {% block content %}
 <h2>Hashing Algorithms</h2>
 
@@ -12,7 +12,7 @@
 
 <form method="POST" enctype="multipart/form-data">
     <label>Enter Text to Hash:</label><br>
-    <textarea name="text" rows="4" cols="60" placeholder="Or upload a file...">{{ request.form.text or '' }}</textarea><br>
+    <textarea name="text" rows="4" cols="60" placeholder="Enter text to hash">{{ request.form.text or '' }}</textarea><br>
 
     <label>Upload File (optional):</label><br>
     <input type="file" name="file"><br><br>
