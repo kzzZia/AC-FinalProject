@@ -32,7 +32,7 @@
 
 ## 💡 Discussions
 
----
+SecureCrypt was developed as a cryptographic web application to bridge the gap between theoretical cryptography and its practical implementation. With the growing demand for data privacy and secure communication, it is essential for both developers and users to understand how encryption, decryption, and hashing algorithms operate in real-world environments. This project aimed to demonstrate that cryptographic concepts could be implemented, tested, and interacted with through a modern, user-friendly interface.
 
 ### ⚙️ Application Architecture and UI Choice
 
