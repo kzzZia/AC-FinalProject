@@ -113,5 +113,11 @@ Dashboard
 Layout Dashboard
 ![image](https://github.com/user-attachments/assets/876095eb-df41-4121-81cf-b71a84276e1e)
 
-
-
+![Dashboard](images/dashboard.png)
+![Dashboard Layout](images/layout_dashboard.png)
+![Xor Cipher](images/xorcipher.png)
+![Caesar Cipher](images/caesarcipher.png)
+![Diffi-Hellman Cipher](images/diffiecipher.png)
+![RSA Cipher](images/rsacipher.png)
+![Block Cipher](images/blockcipher.png)
+![Hashing Algorithms](images/hashcipher.png)
