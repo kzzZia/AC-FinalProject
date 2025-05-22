@@ -11,8 +11,13 @@
 
 - Garcia, Asi Neo
 - Janda, Christian Paul 
-- Mediado, Hyachinthe 
+- Mediado, Hyacinthe 
 - Nanale, Krizia Belle 
+
+---
+
+## Access through this server:
+https://ac-finalproject-2.onrender.com
 
 ---
 
