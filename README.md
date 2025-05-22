@@ -108,11 +108,19 @@ The SecureCrypt application implements the following types of cryptographic algo
 
 ---
 ## 📸 Sample Runs / Outputs
+Dashboard
 ![Dashboard](images/dashboard.png)
+Dashboard Layout
 ![Dashboard Layout](images/layout_dashboard.png)
+Xor Cipher
 ![Xor Cipher](images/xorcipher.png)
+Caesar Cipher
 ![Caesar Cipher](images/caesarcipher.png)
-![Diffi-Hellman Cipher](images/diffiecipher.png)
+Diffie-Hellman Cipher
+![Diffie-Hellman Cipher](images/diffiecipher.png)
+RSA Cipher
 ![RSA Cipher](images/rsacipher.png)
+Block Cipher
 ![Block Cipher](images/blockcipher.png)
+Hashing Algorithms
 ![Hashing Algorithms](images/hash.png)
