@@ -3,6 +3,7 @@
 # 🔐SecureCrypt: A Cryptographic Web Application
 
 **CSAC 329 – Applied Cryptography**
+
 **Date:** May 2025  
 
 ---
@@ -13,11 +14,6 @@
 - Janda, Christian Paul 
 - Mediado, Hyacinthe 
 - Nanale, Krizia Belle 
-
----
-
-## 🔗 Access through this server:
-[https://ac-finalproject-2.onrender.com]( https://ac-finalproject-2.onrender.com)
 
 ---
 
@@ -108,19 +104,32 @@ The SecureCrypt application implements the following types of cryptographic algo
 
 ---
 ## 📸 Sample Runs / Outputs
+
+## 🔗 Access through this server:
+[https://ac-finalproject-2.onrender.com]( https://ac-finalproject-2.onrender.com)
+
+---
+
 Dashboard
 ![Dashboard](images/dashboard.png)
+
 Dashboard Layout
 ![Dashboard Layout](images/layout_dashboard.png)
+
 Xor Cipher
 ![Xor Cipher](images/xorcipher.png)
+
 Caesar Cipher
 ![Caesar Cipher](images/caesarcipher.png)
+
 Diffie-Hellman Cipher
 ![Diffie-Hellman Cipher](images/diffiecipher.png)
+
 RSA Cipher
 ![RSA Cipher](images/rsacipher.png)
+
 Block Cipher
 ![Block Cipher](images/blockcipher.png)
+
 Hashing Algorithms
 ![Hashing Algorithms](images/hash.png)
