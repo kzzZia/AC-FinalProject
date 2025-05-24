@@ -133,3 +133,8 @@ Block Cipher
 
 Hashing Algorithms
 ![Hashing Algorithms](images/hash.png)
+
+
+
+Video Link:
+https://drive.google.com/open?id=13e9X43OYh_aPchi3bjQWim74tE_aYC-d&usp=drive_copy
