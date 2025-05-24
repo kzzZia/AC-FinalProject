@@ -137,4 +137,5 @@ Hashing Algorithms
 
 
 🔗 Video Link:
+[https://youtu.be/-2kx5Q8_JMc](https://youtu.be/-2kx5Q8_JMc)
 
