@@ -136,5 +136,5 @@ Hashing Algorithms
 
 
 
-Video Link:
+🔗 Video Link:
 https://youtu.be/mvWrr4BbPt0
